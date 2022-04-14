@@ -1,0 +1,27 @@
+@import url(./utils.css);
+@import url(./user-form.css);
+:root {
+    --clr-background: #f8f8f8;
+    --clr-accent-one: #282828;
+    --clr-accent-two: #787878;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    color: var(--clr-accent-one);
+}
+.dark {
+    --clr-background: #212121;
+    --clr-accent-one: #f8f8f8;
+    --clr-accent-two: #cbcbcb;
+    --clr-primary: var(--clr-primary-faded);
+    --clr-error: #e05449;
+}
+.App {
+    background-color: var(--clr-background);
+    color: var(--clr-accent-one);
+}

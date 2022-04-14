@@ -1,7 +1,16 @@
-import "./App.css";
+import "./Styles/App.css";
+import { Navbar, ToastWrapper } from "./Components";
+import { useTheme } from "./Hooks";
+import PageRoutes from "./Routes/PageRoutes";
 
-function App() {
-    return <div className="App"></div>;
+export default function App() {
+    const { themeToggle } = useTheme();
+
+    return (
+        <div className={`App ${themeToggle ? "dark" : ""}`}>
+            <ToastWrapper />
+            <Navbar />
+            <PageRoutes />
+        </div>
+    );
 }
-
-export default App;

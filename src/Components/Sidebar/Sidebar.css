@@ -1,0 +1,31 @@
+.sidebar-wrapper {
+    height: 85vh;
+    position: sticky;
+    top: 5.5rem;
+    left: 0;
+    overflow-y: auto;
+    background-color: var(--clr-background);
+    padding-top: 0.5rem;
+}
+.sidebar {
+    width: 100%;
+    background-color: var(--clr-background);
+}
+
+.sidebar-btn {
+    text-align: justify;
+    font-weight: var(--fw-bold-600);
+    font-size: 1rem;
+    color: var(--clr-accent-two);
+}
+.sidebar-btn:hover {
+    color: var(--clr-accent-one);
+}
+.sidebar-btn.active {
+    background-color: var(--clr-primary-faded);
+    color: var(--clr-black);
+}
+.sidebar-btn:active {
+    transform: scale(0.99);
+    transition: 0.1s ease;
+}

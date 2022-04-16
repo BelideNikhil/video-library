@@ -25,3 +25,19 @@ p {
     background-color: var(--clr-background);
     color: var(--clr-accent-one);
 }
+.route-wrapper {
+    width: 100%;
+    height: 100%;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+.main-wrapper {
+    flex-grow: 1;
+    display: grid;
+    grid-template-columns: 15rem 1fr;
+}
+.main-wrapper .main {
+    width: 95%;
+    margin: 0 auto;
+}

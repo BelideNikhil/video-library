@@ -24,3 +24,10 @@ export const authActionTypes = {
     SET_SIGNUP_ERROR: "SET_SIGNUP_ERROR",
     SET_AUTH_LOGOUT: "SET_AUTH_LOGOUT",
 };
+
+export const videoActionTypes = {
+    SET_VIDEOLIST: "SET_VIDEOLIST",
+    SET_LOADING: "SET_LOADING",
+    SET_ERROR: "SET_ERROR",
+    SET_SELECTED_CATEGORY: "SET_SELECTED_CATEGORY",
+};

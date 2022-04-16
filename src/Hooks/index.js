@@ -1,4 +1,4 @@
 import { useTheme } from "./useTheme";
 import { useAuth } from "./useAuth";
-
-export { useAuth, useTheme };
+import { useVideo } from "./useVideo";
+export { useAuth, useTheme, useVideo };

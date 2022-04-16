@@ -1,3 +1,21 @@
 .video-list-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1rem;
+}
+
+.category-btn {
     color: var(--clr-accent-one);
+    font-size: 0.9rem;
+    font-weight: var(--fw-bold-600);
+    border: 2px solid var(--clr-primary);
+    border-radius: 2rem;
+}
+.category-btn.active {
+    background-color: var(--clr-primary);
+    color: var(--clr-background);
+}
+.category-btn:active {
+    transform: scale(0.99);
+    transition: 0.1ms ease-in-out;
 }

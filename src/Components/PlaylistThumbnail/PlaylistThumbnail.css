@@ -1,0 +1,30 @@
+.playlist-thumbnail {
+    width: 100%;
+    height: 12rem;
+    max-width: 20rem;
+    position: relative;
+}
+
+.playlist-thumbnail img {
+    width: 100%;
+    height: 85%;
+}
+
+.thumbnail-overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 85%;
+    background-color: rgb(0, 0, 0, 0.8);
+}
+
+.playlist-thumbnail .playlist-title {
+    font-weight: var(--fw--semi-bold-500);
+    color: var(--clr-accent-two);
+    font-size: 1.1rem;
+}
+.btn-icon.delete-playlist-btn {
+    color: var(--clr-accent-two);
+    margin: 0;
+}

@@ -1,0 +1,18 @@
+.new-playlist-wrapper {
+    width: 100%;
+    max-width: 20rem;
+    border: 1px solid var(--clr-primary-faded);
+    height: 12rem;
+}
+
+.new-playlist-wrapper .user-form {
+    box-shadow: unset;
+    border: unset;
+    width: 100%;
+}
+
+.new-playlist-wrapper .user-form button {
+    margin: 0;
+    flex: 1;
+    border: none;
+}

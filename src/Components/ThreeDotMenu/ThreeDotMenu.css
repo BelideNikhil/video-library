@@ -1,0 +1,16 @@
+.three-dot-wrapper {
+    background-color: var(--clr-background-two);
+    color: var(--clr-accent-one);
+    box-shadow: var(--box-shadow-heavy);
+    position: absolute;
+    right: 0;
+    width: max-content;
+}
+.three-dot-wrapper .menu-btn {
+    color: var(--clr-accent-one);
+    font-size: 0.9rem;
+    font-weight: var(--fw--semi-bold-500);
+}
+.menu-btn:hover {
+    color: var(--clr-accent-two);
+}

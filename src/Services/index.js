@@ -3,4 +3,18 @@ import { getSignupDetails } from "./AuthServices/getSignupService";
 
 import { getVideoList } from "./VideoServices/getVideoListService";
 
-export { getLoginDetails, getSignupDetails, getVideoList };
+import { addToPlaylistService } from "./PlaylistServices/addToPlaylistService";
+import { createPlaylistService } from "./PlaylistServices/createPlaylistService";
+import { removeFromPlaylistService } from "./PlaylistServices/removeFromPlaylistService";
+import { getAllPlaylistsService } from "./PlaylistServices/getAllPlaylistsService";
+import { deletePlaylistService } from "./PlaylistServices/deletePlaylistService";
+export {
+    getLoginDetails,
+    getSignupDetails,
+    getVideoList,
+    addToPlaylistService,
+    createPlaylistService,
+    removeFromPlaylistService,
+    getAllPlaylistsService,
+    deletePlaylistService,
+};

@@ -31,3 +31,10 @@ export const videoActionTypes = {
     SET_ERROR: "SET_ERROR",
     SET_SELECTED_CATEGORY: "SET_SELECTED_CATEGORY",
 };
+
+export const playlistsActionTypes = {
+    SET_PLAYLISTS: "SET_PLAYLISTS",
+    SET_LOADING: "SET_LOADING",
+    SET_ERROR: "SET_ERROR",
+    UPDATE_PLAYLIST: "UPDATE_PLAYLIST",
+};

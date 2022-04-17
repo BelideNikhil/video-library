@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 import { AuthContext } from "../Context";
 import { getLoginDetails, getSignupDetails } from "../Services";
@@ -10,6 +10,8 @@ const { SET_LOGIN_ERROR, SET_SIGNUP_ERROR, SET_AUTH, SET_AUTH_LOGOUT } = authAct
 export function useAuth() {
     const { authState, authDispatchFuntion } = useContext(AuthContext);
     const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || "/explore";
 
     const userLoginHandler = async (userData) => {
         const toastId = toast.loading("Logging In...");
@@ -25,7 +27,7 @@ export function useAuth() {
                     "offroad_tv_jwt",
                     JSON.stringify({ userName: data.foundUser.firstName, token: data.encodedToken })
                 );
-                navigate("/");
+                navigate(from, { replace: true });
             }
         } catch (err) {
             toast.error("Login Error", { id: toastId });
@@ -47,7 +49,7 @@ export function useAuth() {
                     "offroad_tv_jwt",
                     JSON.stringify({ userName: data.createdUser.firstName, token: data.encodedToken })
                 );
-                navigate("/");
+                navigate(from, { replace: true });
             }
         } catch (err) {
             toast.error("Sign Up Error", { id: toastId });

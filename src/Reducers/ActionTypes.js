@@ -38,3 +38,9 @@ export const playlistsActionTypes = {
     SET_ERROR: "SET_ERROR",
     UPDATE_PLAYLIST: "UPDATE_PLAYLIST",
 };
+
+export const noteActionTypes = {
+    SET_NOTES: "SET_NOTES",
+    SET_LOADING: "SET_LOADING",
+    SET_ERROR: "SET_ERROR",
+};

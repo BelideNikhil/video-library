@@ -1,7 +1,7 @@
 import axios from "axios";
 
-export function getNotesService(token) {
-    return axios.get(`/api/user/notes`, {
+export function getNotesService({ token, videoId }) {
+    return axios.get(`/api/user/notes/${videoId}`, {
         headers: { authorization: token },
     });
 }

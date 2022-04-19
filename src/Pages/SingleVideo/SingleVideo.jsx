@@ -1,10 +1,13 @@
 import "./SingleVideo.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useVideo, useAuth, useNotes } from "../../Hooks";
 import { Loading, Sidebar, PlaylistModal, NoteInput, NoteList } from "../../Components";
 import { useParams, useNavigate } from "react-router-dom";
 import ReactPlayer from "react-player";
 import { getCreatorImg, getVideoUrl } from "../../Utils";
+import { noteActionTypes } from "../../Reducers/ActionTypes";
+
+const { SET_VIDEO_ID } = noteActionTypes;
 
 export default function SingleVideo() {
     const [showPlaylistModal, setPlaylistModal] = useState(false);
@@ -13,11 +16,12 @@ export default function SingleVideo() {
     const {
         videoState: { videoList, isLoading },
     } = useVideo();
+
     const {
         authState: { token },
     } = useAuth();
 
-    const { addNoteHandler } = useNotes();
+    const { addNoteHandler, notesDispatchFunction } = useNotes();
 
     const { videoId } = useParams();
     const video = videoList?.find((each) => each._id === videoId);
@@ -30,6 +34,10 @@ export default function SingleVideo() {
         }
     }
 
+    useEffect(() => {
+        notesDispatchFunction({ type: SET_VIDEO_ID, payload: { videoId } });
+    }, [videoId]);
+
     return (
         <div className="main-wrapper">
             <Sidebar />
@@ -38,7 +46,7 @@ export default function SingleVideo() {
             ) : (
                 <main className="main pt-12 single-video-wrapper">
                     <div className="single-video">
-                        <ReactPlayer width="100%" height="30rem" url={getVideoUrl(videoId)} />
+                        <ReactPlayer width="100%" height="30rem" controls={true} url={getVideoUrl(videoId)} />
 
                         <div className="single-video-title my-8">{video?.title}</div>
                         <div className="view-count">{video?.views} views</div>

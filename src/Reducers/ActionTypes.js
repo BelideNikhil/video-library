@@ -43,4 +43,5 @@ export const noteActionTypes = {
     SET_NOTES: "SET_NOTES",
     SET_LOADING: "SET_LOADING",
     SET_ERROR: "SET_ERROR",
+    SET_VIDEO_ID: "SET_VIDEO_ID",
 };

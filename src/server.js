@@ -116,7 +116,7 @@ export function makeServer({ environment = "development" } = {}) {
             this.delete("/user/history/all", clearHistoryHandler.bind(this));
 
             // video notes
-            this.get("/user/notes", getNotesHandler.bind(this));
+            this.get("/user/notes/:videoId", getNotesHandler.bind(this));
             this.post("/user/notes", addNoteHandler.bind(this));
             this.post("/user/notes/:noteId", editNoteHandler.bind(this));
             this.delete("/user/notes/:noteId", deleteNoteHandler.bind(this));

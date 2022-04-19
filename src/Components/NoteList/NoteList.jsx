@@ -1,10 +1,11 @@
 import { useAuth, useNotes } from "../../Hooks";
 import NoteCard from "./NoteCard";
 import "./NoteList.css";
+import Loading from "../Loading/Loading";
 
 export default function NoteList() {
     const {
-        notesState: { notes },
+        notesState: { notes, isLoading },
     } = useNotes();
 
     const {
@@ -14,9 +15,11 @@ export default function NoteList() {
     return (
         <div className="w-90 ma-auto">
             {token ? (
-                notes?.map((note) => {
-                    return <NoteCard note={note} key={note._id} />;
-                })
+                isLoading ? (
+                    <Loading />
+                ) : (
+                    notes.map((note) => <NoteCard note={note} key={note._id} />)
+                )
             ) : (
                 <h5 className="txt-center">Login To View or Create Notes</h5>
             )}

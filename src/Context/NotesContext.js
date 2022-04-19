@@ -4,8 +4,8 @@ import { useAuth } from "../Hooks";
 import { noteActionTypes } from "../Reducers/ActionTypes";
 import { getNotesService } from "../Services";
 
-const initialState = { notes: [], isLoading: false, error: "" };
-const { SET_ERROR, SET_NOTES } = noteActionTypes;
+const initialState = { notes: [], isLoading: false, error: "", videoId: "" };
+const { SET_ERROR, SET_NOTES, SET_LOADING } = noteActionTypes;
 
 export const NotesContext = createContext();
 
@@ -14,12 +14,14 @@ export function NotesProvider({ children }) {
     const {
         authState: { token },
     } = useAuth();
+    const { videoId } = notesState;
 
     useEffect(() => {
-        if (token) {
+        if (token && videoId) {
+            notesDispatchFunction({ type: SET_LOADING });
             (async () => {
                 try {
-                    const { status, data } = await getNotesService(token);
+                    const { status, data } = await getNotesService({ token, videoId });
                     if (status === 200) {
                         notesDispatchFunction({ type: SET_NOTES, payload: { notes: data.notes } });
                     }
@@ -28,7 +30,7 @@ export function NotesProvider({ children }) {
                 }
             })();
         }
-    }, [token]);
+    }, [token, videoId]);
 
     return <NotesContext.Provider value={{ notesState, notesDispatchFunction }}>{children}</NotesContext.Provider>;
 }

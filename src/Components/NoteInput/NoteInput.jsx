@@ -39,7 +39,7 @@ export default function NoteInput({ noteSubmitHandler, note, setIsEditing }) {
                         type="button"
                         className="btn btn-primary"
                         onClick={() => {
-                            setIsEditing(false);
+                            setIsEditing ? setIsEditing(false) : null;
                             setNoteInput(initialState);
                         }}
                     >

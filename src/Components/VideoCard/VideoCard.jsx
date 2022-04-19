@@ -2,11 +2,13 @@ import "./VideoCard.css";
 import { getThumbnail, getCreatorImg } from "../../Utils";
 import { ThreeDotMenu } from "../index";
 import { useState, useRef, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function VideoCard({ video }) {
     const [showMenu, setShowMenu] = useState(false);
     const { _id, title, creator, creatorId } = video;
     const videoCardRef = useRef(null);
+    const navigate = useNavigate();
 
     useEffect(() => {
         const checkIfClickedOutside = (e) => {
@@ -19,7 +21,12 @@ export default function VideoCard({ video }) {
     }, [showMenu]);
 
     return (
-        <div className="video-card pointer" ref={videoCardRef}>
+        <div
+            className="video-card pointer"
+            ref={videoCardRef}
+            role="button"
+            onClick={() => navigate(`/explore/${_id}`)}
+        >
             <img src={getThumbnail(_id)} alt={title} className="thumbnail-img" />
             <div className="video-content-wrapper mt-6">
                 <div className="video-content">
@@ -30,7 +37,13 @@ export default function VideoCard({ video }) {
                     </div>
                 </div>
                 <div style={{ position: "relative" }}>
-                    <button className="video-menu-btn pointer" onClick={() => setShowMenu((prev) => !prev)}>
+                    <button
+                        className="video-menu-btn pointer"
+                        onClick={(e) => {
+                            e.stopPropagation();
+                            setShowMenu((prev) => !prev);
+                        }}
+                    >
                         <span className="material-icons-outlined">more_vert</span>
                     </button>
                     {showMenu ? <ThreeDotMenu video={video} /> : null}

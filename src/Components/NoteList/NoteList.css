@@ -1,0 +1,16 @@
+.video-note-actions {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.video-note-actions .btn-icon i {
+    font-style: unset;
+    color: var(--clr-accent-two);
+}
+
+.video-note-card.card {
+    max-width: 100%;
+}
+.video-note-card.card:hover {
+    box-shadow: unset;
+}

@@ -3,4 +3,12 @@ import { signupErrorReducer } from "./SignupErrorReducer";
 import { SignupUserReducer } from "./SignupUserReducer";
 import { videoReducerFunction } from "./VideoReducer";
 import { playlistReducer } from "./PlaylistReducer";
-export { authReducerFunction, SignupUserReducer, signupErrorReducer, videoReducerFunction, playlistReducer };
+import { notesReducerFunction } from "./NotesReducer";
+export {
+    authReducerFunction,
+    SignupUserReducer,
+    signupErrorReducer,
+    videoReducerFunction,
+    playlistReducer,
+    notesReducerFunction,
+};

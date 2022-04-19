@@ -15,15 +15,28 @@ export default function ThreeDotMenu({ video }) {
     return (
         <>
             <div className="three-dot-wrapper flex-clmn-start-start pa-12">
-                <button className="menu-btn pointer flex-row-start-center ma-8">
+                <button
+                    className="menu-btn pointer flex-row-start-center ma-8"
+                    onClick={(e) => {
+                        e.stopPropagation();
+                    }}
+                >
                     <span className="material-icons-outlined mr-16 ">thumb_up</span>Save to Liked
                 </button>
-                <button className="menu-btn pointer flex-row-start-center ma-8">
+                <button
+                    className="menu-btn pointer flex-row-start-center ma-8"
+                    onClick={(e) => {
+                        e.stopPropagation();
+                    }}
+                >
                     <span className="material-icons-outlined mr-16 ">watch_later</span>Save to Watch Later
                 </button>
                 <button
                     className="menu-btn pointer flex-row-start-center ma-8"
-                    onClick={() => (token ? setPlaylistModal(true) : navigate("/login"))}
+                    onClick={(e) => {
+                        e.stopPropagation();
+                        token ? setPlaylistModal(true) : navigate("/login");
+                    }}
                 >
                     <span className="material-icons-outlined mr-16 ">playlist_add</span>Save to Playlist
                 </button>

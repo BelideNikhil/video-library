@@ -1,0 +1,36 @@
+.video-note-form-wrapper .user-form {
+    border: none;
+    box-shadow: unset;
+}
+
+.video-note-form-wrapper .form-input {
+    background-color: var(--clr-background);
+    color: var(--clr-accent-one);
+}
+
+.video-note-form-wrapper textarea.form-input {
+    resize: none;
+}
+
+.create-note-btn {
+    border: none;
+    color: var(--clr-background);
+}
+
+/* custom scrollbar */
+
+.video-note-form-wrapper textarea.form-input::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: var(--clr-background);
+}
+
+.video-note-form-wrapper textarea.form-input::-webkit-scrollbar {
+    width: 6px;
+    background-color: var(--clr-background);
+}
+
+.video-note-form-wrapper textarea.form-input::-webkit-scrollbar-thumb {
+    background-color: var(--clr-primary);
+    border-radius: 10px;
+}

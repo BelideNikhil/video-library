@@ -29,7 +29,13 @@ export default function PlaylistModal({ setPlaylistModal, video }) {
             <div className="playlist-content my-8 pa-24">
                 <div className="flex-row-spc-btw">
                     <h4>Save To</h4>
-                    <button className="btn-icon btn-icon-sm close-modal-btn" onClick={() => setPlaylistModal(false)}>
+                    <button
+                        className="btn-icon btn-icon-sm close-modal-btn"
+                        onClick={(e) => {
+                            e.stopPropagation();
+                            setPlaylistModal(false);
+                        }}
+                    >
                         <i className="fas fa-times"></i>
                     </button>
                 </div>

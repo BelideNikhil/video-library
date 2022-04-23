@@ -8,6 +8,7 @@ import { createPlaylistService } from "./PlaylistServices/createPlaylistService"
 import { removeFromPlaylistService } from "./PlaylistServices/removeFromPlaylistService";
 import { getAllPlaylistsService } from "./PlaylistServices/getAllPlaylistsService";
 import { deletePlaylistService } from "./PlaylistServices/deletePlaylistService";
+import { deleteVideoInPlaylistService } from "./PlaylistServices/deleteVideoInPlaylistService";
 
 import { getNotesService } from "./NotesServices/getNotesService";
 import { addNoteService } from "./NotesServices/addNoteService";
@@ -27,4 +28,5 @@ export {
     addNoteService,
     editNoteService,
     deleteNoteService,
+    deleteVideoInPlaylistService,
 };

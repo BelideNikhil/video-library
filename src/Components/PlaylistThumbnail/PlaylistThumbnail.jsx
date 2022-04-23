@@ -1,6 +1,7 @@
 import "./PlaylistThumbnail.css";
 import { getThumbnail } from "../../Utils/getThumbnail";
 import { useAuth, usePlaylist } from "../../Hooks";
+import { useNavigate } from "react-router-dom";
 
 export default function PlaylistThumbnail({ playlist }) {
     const { deletePlaylistHandler } = usePlaylist();
@@ -8,8 +9,10 @@ export default function PlaylistThumbnail({ playlist }) {
         authState: { token },
     } = useAuth();
 
+    const navigate = useNavigate();
+
     return (
-        <div className="playlist-thumbnail">
+        <div className="playlist-thumbnail pointer" role="button" onClick={() => navigate(`/playlist/${playlist._id}`)}>
             <img
                 src={playlist.videos.length ? getThumbnail(playlist.videos[0]._id) : "/Assets/playlist-thumbnail.jpg"}
                 alt={playlist.title}

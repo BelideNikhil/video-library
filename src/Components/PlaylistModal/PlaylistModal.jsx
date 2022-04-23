@@ -25,7 +25,7 @@ export default function PlaylistModal({ setPlaylistModal, video }) {
     }
 
     return (
-        <div className="playlist-modal-wrapper flex-row-center-center">
+        <div className="playlist-modal-wrapper flex-row-center-center" onClick={(e) => e.stopPropagation()}>
             <div className="playlist-content my-8 pa-24">
                 <div className="flex-row-spc-btw">
                     <h4>Save To</h4>
@@ -53,11 +53,12 @@ export default function PlaylistModal({ setPlaylistModal, video }) {
                                                 type="checkbox"
                                                 className="form-input mr-8"
                                                 checked={presentInPlaylist ? true : false}
-                                                onChange={() =>
+                                                onChange={(e) => {
+                                                    e.stopPropagation();
                                                     presentInPlaylist
                                                         ? removeFromPlaylistHandler({ video, token, playlist })
-                                                        : addToPlaylistHandler({ video, token, playlist })
-                                                }
+                                                        : addToPlaylistHandler({ video, token, playlist });
+                                                }}
                                             />
                                             {playlist.title}
                                         </label>
@@ -75,10 +76,17 @@ export default function PlaylistModal({ setPlaylistModal, video }) {
                             type="text"
                             className="form-input my-4"
                             placeholder="Create playlist..."
-                            onChange={(e) => setNewPlaylist((prev) => ({ ...prev, text: e.target.value }))}
+                            onChange={(e) => {
+                                e.stopPropagation();
+                                setNewPlaylist((prev) => ({ ...prev, text: e.target.value }));
+                            }}
                             value={newPlaylist.text}
                         />
-                        <button className="btn btn-solid-primary create-playlist-btn" type="submit">
+                        <button
+                            className="btn btn-solid-primary create-playlist-btn"
+                            type="submit"
+                            onClick={(e) => e.stopPropagation()}
+                        >
                             Create
                         </button>
                     </form>
@@ -86,7 +94,10 @@ export default function PlaylistModal({ setPlaylistModal, video }) {
                     <div>
                         <button
                             className="btn btn-solid-primary create-playlist-btn"
-                            onClick={() => setNewPlaylist((prev) => ({ ...prev, toggle: true }))}
+                            onClick={(e) => {
+                                e.stopPropagation();
+                                setNewPlaylist((prev) => ({ ...prev, toggle: true }));
+                            }}
                         >
                             Create Playlist
                         </button>

@@ -24,6 +24,7 @@ export default function NewPlaylistCard() {
             {newPlaylist.toggle ? (
                 <form className="user-form pa-24" onSubmit={playlistFormHandler}>
                     <input
+                        autoFocus
                         type="text"
                         className="form-input my-8"
                         onChange={(e) => setNewPlaylist((prev) => ({ ...prev, text: e.target.value }))}

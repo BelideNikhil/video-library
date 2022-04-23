@@ -73,6 +73,7 @@ export default function PlaylistModal({ setPlaylistModal, video }) {
                 {newPlaylist.toggle ? (
                     <form className="user-form my-8" onSubmit={playlistFormHandler}>
                         <input
+                            autoFocus
                             type="text"
                             className="form-input my-4"
                             placeholder="Create playlist..."

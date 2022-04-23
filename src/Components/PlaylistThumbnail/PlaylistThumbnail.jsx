@@ -25,7 +25,10 @@ export default function PlaylistThumbnail({ playlist }) {
                 <div className="playlist-title">{playlist.title}</div>
                 <button
                     className="btn-icon delete-playlist-btn"
-                    onClick={() => deletePlaylistHandler({ playlistId: playlist._id, token })}
+                    onClick={(e) => {
+                        e.stopPropagation();
+                        deletePlaylistHandler({ playlistId: playlist._id, token });
+                    }}
                 >
                     <span className="material-icons-outlined">delete_outline</span>
                 </button>

@@ -7,6 +7,7 @@ import {
     createPlaylistService,
     removeFromPlaylistService,
     deletePlaylistService,
+    deleteVideoInPlaylistService,
 } from "../Services";
 
 const { SET_PLAYLISTS, UPDATE_PLAYLIST, SET_LOADING, SET_ERROR } = playlistsActionTypes;
@@ -86,6 +87,21 @@ export function usePlaylist() {
         }
     }
 
+    async function deleteVideoFromPlaylistHandler({ token, playlistId, videoId }) {
+        const toastId = toast.loading("Removing...");
+
+        try {
+            const { status, data } = await deleteVideoInPlaylistService({ token, playlistId, videoId });
+            if (status === 200) {
+                toast.success("Removed from playlist.", { id: toastId });
+                playlistDispatch({ type: UPDATE_PLAYLIST, payload: { playlist: data.playlist } });
+            }
+        } catch (err) {
+            toast.error("Error Occured, Try Again.", { id: toastId });
+            playlistDispatch({ type: SET_ERROR, payload: { error: err.response.data.errors[0] } });
+        }
+    }
+
     return {
         playlistState,
         playlistDispatch,
@@ -93,5 +109,6 @@ export function usePlaylist() {
         addToPlaylistHandler,
         removeFromPlaylistHandler,
         deletePlaylistHandler,
+        deleteVideoFromPlaylistHandler,
     };
 }

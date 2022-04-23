@@ -1,0 +1,42 @@
+.single-playlist-wrapper {
+    display: grid;
+    grid-template-columns: 3fr 7fr;
+    gap: 1rem;
+    width: 90%;
+    margin: 2rem auto;
+}
+
+.horizontal-video-card {
+    width: 100%;
+    max-width: 42rem;
+    display: grid;
+    grid-template-columns: 4fr 5.5fr 0.5fr;
+    height: max-content;
+    align-content: flex-end;
+    gap: 0.5rem;
+}
+
+.horizontal-video-card img {
+    width: 100%;
+    height: 100%;
+}
+
+.horizontal-video-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.btn-icon.delete-video-btn {
+    margin: 0;
+}
+.delete-video-btn i {
+    color: var(--clr-accent-two);
+    font-style: unset;
+}
+
+@media screen and (max-width: 900px) {
+    .single-playlist-wrapper {
+        grid-template-columns: 1fr;
+    }
+}

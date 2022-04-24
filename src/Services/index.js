@@ -19,6 +19,14 @@ import { getHistoryService } from "./HistoryServices/getHistoryService";
 import { addToHistoryService } from "./HistoryServices/addToHistoryService";
 import { clearWatchHistoryService } from "./HistoryServices/clearWatchHistoryService";
 import { removeFromHistoryService } from "./HistoryServices/removeFromHistoryService";
+
+import { getWatchLaterService } from "./WatchLaterService/getWatchLaterService";
+import { addToWatchLaterService } from "./WatchLaterService/addToWatchLaterService";
+import { removeFromWatchLaterService } from "./WatchLaterService/removeFromWatchLaterService";
+
+import { getLikesService } from "./LikedServices/getLikesService";
+import { addToLikedVideoService } from "./LikedServices/addToLikedVideoService";
+import { removeFromLikedService } from "./LikedServices/removeFromLikedVideoService";
 export {
     getLoginDetails,
     getSignupDetails,
@@ -37,4 +45,10 @@ export {
     addToHistoryService,
     clearWatchHistoryService,
     removeFromHistoryService,
+    getWatchLaterService,
+    addToWatchLaterService,
+    removeFromWatchLaterService,
+    getLikesService,
+    addToLikedVideoService,
+    removeFromLikedService,
 };

@@ -45,3 +45,9 @@ export const noteActionTypes = {
     SET_ERROR: "SET_ERROR",
     SET_VIDEO_ID: "SET_VIDEO_ID",
 };
+
+export const historyActionTypes = {
+    SET_HISTORY_LIST: "SET_HISTORY_LIST",
+    SET_LOADING: "SET_LOADING",
+    SET_ERROR: "SET_ERROR",
+};

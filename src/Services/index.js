@@ -15,6 +15,10 @@ import { addNoteService } from "./NotesServices/addNoteService";
 import { editNoteService } from "./NotesServices/editNoteService";
 import { deleteNoteService } from "./NotesServices/deleteNoteService";
 
+import { getHistoryService } from "./HistoryServices/getHistoryService";
+import { addToHistoryService } from "./HistoryServices/addToHistoryService";
+import { clearWatchHistoryService } from "./HistoryServices/clearWatchHistoryService";
+import { removeFromHistoryService } from "./HistoryServices/removeFromHistoryService";
 export {
     getLoginDetails,
     getSignupDetails,
@@ -29,4 +33,8 @@ export {
     editNoteService,
     deleteNoteService,
     deleteVideoInPlaylistService,
+    getHistoryService,
+    addToHistoryService,
+    clearWatchHistoryService,
+    removeFromHistoryService,
 };

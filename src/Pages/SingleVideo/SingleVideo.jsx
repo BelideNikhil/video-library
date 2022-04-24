@@ -1,6 +1,6 @@
 import "./SingleVideo.css";
 import { useState, useEffect } from "react";
-import { useVideo, useAuth, useNotes } from "../../Hooks";
+import { useVideo, useAuth, useNotes, useWatchHistory } from "../../Hooks";
 import { Loading, Sidebar, PlaylistModal, NoteInput, NoteList } from "../../Components";
 import { useParams, useNavigate } from "react-router-dom";
 import ReactPlayer from "react-player";
@@ -20,8 +20,8 @@ export default function SingleVideo() {
     const {
         authState: { token },
     } = useAuth();
-
     const { addNoteHandler, notesDispatchFunction } = useNotes();
+    const { addToHistoryList } = useWatchHistory();
 
     const { videoId } = useParams();
     const video = videoList?.find((each) => each._id === videoId);
@@ -36,7 +36,8 @@ export default function SingleVideo() {
 
     useEffect(() => {
         notesDispatchFunction({ type: SET_VIDEO_ID, payload: { videoId } });
-    }, [videoId]);
+        addToHistoryList({ token, video });
+    }, [videoId, token, video]);
 
     return (
         <div className="main-wrapper">

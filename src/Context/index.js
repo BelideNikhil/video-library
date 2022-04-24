@@ -3,6 +3,7 @@ import { AuthProvider, AuthContext } from "./AuthContext";
 import { VideoProvider, VideoContext } from "./VideoContext";
 import { PlaylistProvider, PlaylistContext } from "./PlaylistContext";
 import { NotesProvider, NotesContext } from "./NotesContext";
+import { HistoryProvider, HistoryContext } from "./HistoryContext";
 export {
     ThemeProvider,
     ThemeContext,
@@ -14,4 +15,6 @@ export {
     PlaylistContext,
     NotesProvider,
     NotesContext,
+    HistoryProvider,
+    HistoryContext,
 };

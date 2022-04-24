@@ -4,6 +4,7 @@ import { SignupUserReducer } from "./SignupUserReducer";
 import { videoReducerFunction } from "./VideoReducer";
 import { playlistReducer } from "./PlaylistReducer";
 import { notesReducerFunction } from "./NotesReducer";
+import { historyReducerFunction } from "./HistoryReducer";
 export {
     authReducerFunction,
     SignupUserReducer,
@@ -11,4 +12,5 @@ export {
     videoReducerFunction,
     playlistReducer,
     notesReducerFunction,
+    historyReducerFunction,
 };

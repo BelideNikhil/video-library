@@ -1,28 +1,45 @@
 import "./ThreeDotMenu.css";
 import { useState } from "react";
 import { PlaylistModal } from "../index";
-import { useAuth, useWatchHistory } from "../../Hooks";
+import { useAuth, useWatchHistory, useWatchLater } from "../../Hooks";
 import { useLocation, useNavigate } from "react-router-dom";
 
 export default function ThreeDotMenu({ video }) {
     const [showPlaylistModal, setPlaylistModal] = useState(false);
     const navigate = useNavigate();
+    const { watchLaterState, addToWatchLater, removeFromWatchLater } = useWatchLater();
 
     const {
         authState: { token },
     } = useAuth();
+
     const { removeVideoFromHistory } = useWatchHistory();
+
+    const foundInWatchLater = watchLaterState.watchLaterList?.find((each) => each._id === video._id);
     const currentPath = useLocation().pathname;
+
     return (
         <>
-            <div className="three-dot-wrapper flex-clmn-start-start pa-12">
+            <div
+                className="three-dot-wrapper flex-clmn-start-start pa-12"
+                role="button"
+                onClick={(e) => e.stopPropagation()}
+            >
                 <button
                     className="menu-btn pointer flex-row-start-center ma-8"
                     onClick={(e) => {
                         e.stopPropagation();
+                        {
+                            foundInWatchLater
+                                ? removeFromWatchLater({ token, video })
+                                : addToWatchLater({ token, video });
+                        }
                     }}
                 >
-                    <span className="material-icons-outlined mr-16 ">watch_later</span>Save to Watch Later
+                    <span className="material-icons-outlined mr-16 ">
+                        {foundInWatchLater ? "block" : "watch_later"}
+                    </span>
+                    {foundInWatchLater ? "Remove from" : "Save to"} Watch Later
                 </button>
                 <button
                     className="menu-btn pointer flex-row-start-center ma-8"

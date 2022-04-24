@@ -19,11 +19,18 @@ export default function Sidebar() {
                     <span className="material-icons-outlined mx-16">explore</span>Explore
                 </NavLink>
                 <NavLink
-                    to="/watchlater"
+                    to="/watch-later"
                     className={`sidebar-btn ${({ isActive }) =>
                         isActive ? "active" : ""} flex-row-start-center px-16 py-12 mb-6`}
                 >
                     <span className="material-icons-outlined mx-16">watch_later</span>Watch Later
+                </NavLink>
+                <NavLink
+                    to="/liked-videos"
+                    className={`sidebar-btn ${({ isActive }) =>
+                        isActive ? "active" : ""} flex-row-start-center px-16 py-12 mb-6`}
+                >
+                    <span className="material-icons-outlined mx-16">thumb_up</span>Liked Videos
                 </NavLink>
                 <NavLink
                     to="/playlist"

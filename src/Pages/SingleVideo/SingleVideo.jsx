@@ -1,6 +1,6 @@
 import "./SingleVideo.css";
 import { useState, useEffect } from "react";
-import { useVideo, useAuth, useNotes, useWatchHistory } from "../../Hooks";
+import { useVideo, useAuth, useNotes, useWatchHistory, useLikes, useWatchLater } from "../../Hooks";
 import { Loading, Sidebar, PlaylistModal, NoteInput, NoteList } from "../../Components";
 import { useParams, useNavigate } from "react-router-dom";
 import ReactPlayer from "react-player";
@@ -20,8 +20,11 @@ export default function SingleVideo() {
     const {
         authState: { token },
     } = useAuth();
+
     const { addNoteHandler, notesDispatchFunction } = useNotes();
     const { addToHistoryList } = useWatchHistory();
+    const { watchLaterState, addToWatchLater, removeFromWatchLater } = useWatchLater();
+    const { addToLikedVideos, removeFromLikedVideos, likesListState } = useLikes();
 
     const { videoId } = useParams();
     const video = videoList?.find((each) => each._id === videoId);
@@ -33,6 +36,9 @@ export default function SingleVideo() {
             setNoteInput({ title: "", text: "" });
         }
     }
+
+    const foundInLikedVideos = likesListState.likedList?.find((each) => each._id === video._id);
+    const foundInWatchLater = watchLaterState.watchLaterList?.find((each) => each._id === video._id);
 
     useEffect(() => {
         notesDispatchFunction({ type: SET_VIDEO_ID, payload: { videoId } });
@@ -53,11 +59,27 @@ export default function SingleVideo() {
                         <div className="view-count">{video?.views} views</div>
 
                         <div className="single-video-actions my-12">
-                            <button className="btn-icon">
-                                <i className="material-icons-outlined">thumb_up</i>
+                            <button
+                                className="btn-icon"
+                                onClick={(e) => {
+                                    e.stopPropagation();
+                                    foundInLikedVideos
+                                        ? removeFromLikedVideos({ token, videoId: video._id })
+                                        : addToLikedVideos({ token, video });
+                                }}
+                            >
+                                <i className={`material-icons${foundInLikedVideos ? "" : "-outlined"}`}>thumb_up</i>
                             </button>
-                            <button className="btn-icon">
-                                <i className="material-icons-outlined">watch_later</i>
+                            <button
+                                className="btn-icon"
+                                onClick={(e) => {
+                                    e.stopPropagation();
+                                    foundInWatchLater
+                                        ? removeFromWatchLater({ token, video })
+                                        : addToWatchLater({ token, video });
+                                }}
+                            >
+                                <i className={`material-icons${foundInWatchLater ? "" : "-outlined"}`}>watch_later</i>
                             </button>
                             <button
                                 className="btn-icon"

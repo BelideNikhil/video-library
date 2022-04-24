@@ -43,10 +43,7 @@ export default function SingleVideo() {
         <div className="main-wrapper">
             <Sidebar />
             {isLoading ? (
-                <div>
-                    <h4></h4>
-                    <Loading />
-                </div>
+                <Loading />
             ) : (
                 <main className="main pt-12 single-video-wrapper">
                     <div className="single-video">

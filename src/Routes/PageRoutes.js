@@ -1,7 +1,7 @@
 import { Navigate, Routes, Route } from "react-router-dom";
 import PrivateRoute from "./PrivateRoute";
 import { ResetScrollbar } from "../Components";
-import { VideoListing, Login, Signup, Playlist, SingleVideo, SinglePlaylist } from "../Pages";
+import { VideoListing, Login, Signup, Playlist, SingleVideo, SinglePlaylist, History } from "../Pages";
 import { useAuth } from "../Hooks";
 
 export default function PageRoutes() {
@@ -20,6 +20,7 @@ export default function PageRoutes() {
                     <Route element={<PrivateRoute />}>
                         <Route path="/playlist" element={<Playlist />} />
                         <Route path="/playlist/:playlistId" element={<SinglePlaylist />} />
+                        <Route path="/history" element={<History />} />
                     </Route>
 
                     {!token ? (

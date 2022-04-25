@@ -25,7 +25,11 @@ export default function PlaylistModal({ setPlaylistModal, video }) {
     }
 
     return (
-        <div className="playlist-modal-wrapper flex-row-center-center" onClick={(e) => e.stopPropagation()}>
+        <div
+            className="playlist-modal-wrapper flex-row-center-center"
+            role="button"
+            onClick={(e) => e.stopPropagation()}
+        >
             <div className="playlist-content my-8 pa-24">
                 <div className="flex-row-spc-btw">
                     <h4>Save To</h4>

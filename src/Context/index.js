@@ -4,6 +4,8 @@ import { VideoProvider, VideoContext } from "./VideoContext";
 import { PlaylistProvider, PlaylistContext } from "./PlaylistContext";
 import { NotesProvider, NotesContext } from "./NotesContext";
 import { HistoryProvider, HistoryContext } from "./HistoryContext";
+import { WatchLaterProvider, WatchLaterContext } from "./WatchLaterContext";
+import { LikesContext, LikesProvider } from "./LikesContext";
 export {
     ThemeProvider,
     ThemeContext,
@@ -17,4 +19,8 @@ export {
     NotesContext,
     HistoryProvider,
     HistoryContext,
+    WatchLaterProvider,
+    WatchLaterContext,
+    LikesContext,
+    LikesProvider,
 };

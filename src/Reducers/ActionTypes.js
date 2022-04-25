@@ -51,3 +51,15 @@ export const historyActionTypes = {
     SET_LOADING: "SET_LOADING",
     SET_ERROR: "SET_ERROR",
 };
+
+export const watchLaterActionTypes = {
+    SET_WATCHLATER_LIST: "SET_WATCHLATER_LIST",
+    SET_LOADING: "SET_LOADING",
+    SET_ERROR: "SET_ERROR",
+};
+
+export const likesActionTypes = {
+    SET_LIKED_LIST: "SET_LIKED_LIST",
+    SET_LOADING: "SET_LOADING",
+    SET_ERROR: "SET_ERROR",
+};

@@ -1,0 +1,17 @@
+.profile {
+    border: 1px solid var(--clr-accent-two);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow-lightest);
+    max-width: 25rem;
+    margin: 2rem auto;
+}
+
+.profile > * {
+    font-weight: var(--fw--semi-bold-500);
+    color: var(--clr-accent-one);
+}
+
+.profile .avatar {
+    margin: 1rem auto;
+    color: var(--clr-background);
+}

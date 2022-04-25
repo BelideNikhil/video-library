@@ -53,7 +53,7 @@ export default function SingleVideo() {
             ) : (
                 <main className="main pt-12 single-video-wrapper">
                     <div className="single-video">
-                        <ReactPlayer width="100%" height="30rem" controls={true} url={getVideoUrl(videoId)} />
+                        <ReactPlayer playing width="100%" height="30rem" controls={true} url={getVideoUrl(videoId)} />
 
                         <div className="single-video-title my-8">{video?.title}</div>
                         <div className="view-count">{video?.views} views</div>
@@ -63,9 +63,11 @@ export default function SingleVideo() {
                                 className="btn-icon"
                                 onClick={(e) => {
                                     e.stopPropagation();
-                                    foundInLikedVideos
-                                        ? removeFromLikedVideos({ token, videoId: video._id })
-                                        : addToLikedVideos({ token, video });
+                                    token
+                                        ? foundInLikedVideos
+                                            ? removeFromLikedVideos({ token, videoId: video._id })
+                                            : addToLikedVideos({ token, video })
+                                        : navigate("/login");
                                 }}
                             >
                                 <i className={`material-icons${foundInLikedVideos ? "" : "-outlined"}`}>thumb_up</i>
@@ -74,9 +76,11 @@ export default function SingleVideo() {
                                 className="btn-icon"
                                 onClick={(e) => {
                                     e.stopPropagation();
-                                    foundInWatchLater
-                                        ? removeFromWatchLater({ token, video })
-                                        : addToWatchLater({ token, video });
+                                    token
+                                        ? foundInWatchLater
+                                            ? removeFromWatchLater({ token, video })
+                                            : addToWatchLater({ token, video })
+                                        : navigate("/login");
                                 }}
                             >
                                 <i className={`material-icons${foundInWatchLater ? "" : "-outlined"}`}>watch_later</i>

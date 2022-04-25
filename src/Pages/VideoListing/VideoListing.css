@@ -20,3 +20,27 @@
     transform: scale(0.99);
     transition: 0.1ms ease-in-out;
 }
+
+.sort-video-btn {
+    color: var(--clr-accent-one);
+    font-size: 1rem;
+}
+
+.sort-videos-modal {
+    background-color: var(--clr-background-two);
+    color: var(--clr-accent-one);
+    box-shadow: var(--box-shadow-heavy);
+    position: absolute;
+    top: 2.5rem;
+    right: 0;
+    width: max-content;
+    z-index: 1;
+}
+.sort-videos-modal .menu-btn {
+    color: var(--clr-accent-one);
+    font-size: 0.9rem;
+    font-weight: var(--fw--semi-bold-500);
+}
+.menu-btn:hover {
+    color: var(--clr-accent-two);
+}

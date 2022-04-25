@@ -11,6 +11,7 @@ import {
     History,
     WatchLater,
     LikedVideos,
+    Profile,
 } from "../Pages";
 import { useAuth } from "../Hooks";
 
@@ -33,6 +34,7 @@ export default function PageRoutes() {
                         <Route path="/history" element={<History />} />
                         <Route path="/watch-later" element={<WatchLater />} />
                         <Route path="/liked-videos" element={<LikedVideos />} />
+                        <Route path="/profile" element={<Profile />} />
                     </Route>
 
                     {!token ? (

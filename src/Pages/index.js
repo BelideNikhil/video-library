@@ -7,4 +7,17 @@ import SinglePlaylist from "./SinglePlaylist/SinglePlaylist";
 import History from "./History/History";
 import WatchLater from "./WatchLater/WatchLater";
 import LikedVideos from "./LikedVideos/LikedVideos";
-export { VideoListing, Login, Signup, Playlist, SingleVideo, SinglePlaylist, History, WatchLater, LikedVideos };
+import Profile from "./Profile/Profile";
+
+export {
+    VideoListing,
+    Login,
+    Signup,
+    Playlist,
+    SingleVideo,
+    SinglePlaylist,
+    History,
+    WatchLater,
+    LikedVideos,
+    Profile,
+};

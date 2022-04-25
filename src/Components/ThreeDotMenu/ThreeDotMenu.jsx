@@ -30,9 +30,11 @@ export default function ThreeDotMenu({ video }) {
                     onClick={(e) => {
                         e.stopPropagation();
                         {
-                            foundInWatchLater
-                                ? removeFromWatchLater({ token, video })
-                                : addToWatchLater({ token, video });
+                            token
+                                ? foundInWatchLater
+                                    ? removeFromWatchLater({ token, video })
+                                    : addToWatchLater({ token, video })
+                                : navigate("/login");
                         }
                     }}
                 >

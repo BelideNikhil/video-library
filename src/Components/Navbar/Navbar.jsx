@@ -6,8 +6,10 @@ import { useTheme, useAuth } from "../../Hooks";
 export default function Navbar() {
     const { themeToggle, toggleThemeFunction } = useTheme();
     const {
-        authState: { token },
-        userLogoutHandler,
+        authState: {
+            token,
+            userDetails: { firstName, lastName },
+        },
     } = useAuth();
     const navigate = useNavigate();
 
@@ -29,19 +31,26 @@ export default function Navbar() {
                 <nav className="header-nav-links">
                     <div className="flex-row-spc-evenly">
                         <button
-                            className={`theme-toggle-btn pointer ${themeToggle ? "rotate" : ""}`}
+                            className={`theme-toggle-btn pointer mr-6 ${themeToggle ? "rotate" : ""}`}
                             onClick={toggleThemeFunction}
                         >
                             <span className="material-icons-outlined primary-accent">
                                 {themeToggle ? "light_mode" : "dark_mode"}
                             </span>
                         </button>
-                        <button
-                            className="btn btn-primary"
-                            onClick={token ? userLogoutHandler : () => navigate("/login")}
-                        >
-                            {token ? "Logout" : "Login"}
-                        </button>
+                        {token ? (
+                            <div
+                                className="avatar avatar-text avatar-round pointer mr-6"
+                                role="button"
+                                onClick={() => navigate("/profile")}
+                            >
+                                {firstName.charAt(0) + lastName.charAt(0)}
+                            </div>
+                        ) : (
+                            <button className="btn btn-primary" onClick={() => navigate("/login")}>
+                                Login
+                            </button>
+                        )}
                     </div>
                 </nav>
             </header>

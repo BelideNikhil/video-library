@@ -60,20 +60,30 @@
     display: none;
     display: none;
 }
-.header .theme-toggle-btn {
-    width: 28px;
-    height: 28px;
+.header .theme-toggle-btn,
+.header .user-profile-btn {
+    width: 1.75rem;
+    height: 1.75rem;
     transition: all 0.75s;
 }
-.theme-toggle-btn:active {
+.theme-toggle-btn:active,
+.user-profile-btn:active {
     transform: scale(0.92);
     transition: 0.1ms;
 }
-.theme-toggle-btn span {
-    font-size: 28px;
+.theme-toggle-btn span,
+.user-profile-btn span {
+    font-size: 1.75rem;
 }
 .theme-toggle-btn.rotate {
     transform: rotate(180deg);
+}
+
+.header .avatar {
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 0.9rem;
+    color: var(--clr-background);
 }
 @media screen and (max-width: 900px) {
     .nav-search-web {

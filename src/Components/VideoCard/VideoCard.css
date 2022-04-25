@@ -36,3 +36,13 @@
     color: var(--clr-accent-one);
     position: relative;
 }
+
+.upload-date,
+.video-count {
+    font-size: 0.9rem;
+    color: var(--clr-accent-one);
+}
+.dot::after {
+    content: "•";
+    margin: 0 6px;
+}

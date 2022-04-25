@@ -11,6 +11,8 @@ const initialState = {
     isLoading: false,
     categories: ["All", "Off Road Basics", "Tips n Tricks", "Travel", "Dakar"],
     selectedCategory: "All",
+    searchedText: "",
+    sortBy: "",
 };
 
 export const VideoContext = createContext();

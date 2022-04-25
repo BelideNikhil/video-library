@@ -6,7 +6,7 @@ export const AuthContext = createContext();
 
 const local_data = JSON.parse(localStorage.getItem("offroad_tv_jwt"));
 const initialAuthState = {
-    userName: (local_data && local_data.userName) || "",
+    userDetails: (local_data && local_data.userDetails) || "",
     token: (local_data && local_data.token) || "",
     loginError: "",
     signupError: "",

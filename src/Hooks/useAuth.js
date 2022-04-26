@@ -17,7 +17,6 @@ export function useAuth() {
         const toastId = toast.loading("Logging In...");
         try {
             const { status, data } = await getLoginDetails(userData);
-            console.log(data);
             if (status === 200) {
                 toast.success(`Welcome back, ${data.foundUser.firstName} `, { id: toastId });
                 authDispatchFuntion({
@@ -46,11 +45,11 @@ export function useAuth() {
                 toast.success(`Hello, ${data.createdUser.firstName} `, { id: toastId });
                 authDispatchFuntion({
                     type: SET_AUTH,
-                    payload: { userName: data.createdUser.firstName, token: data.encodedToken },
+                    payload: { userDetails: data.createdUser, token: data.encodedToken },
                 });
                 localStorage.setItem(
                     "offroad_tv_jwt",
-                    JSON.stringify({ userName: data.createdUser.firstName, token: data.encodedToken })
+                    JSON.stringify({ userDetails: data.createdUser, token: data.encodedToken })
                 );
                 navigate(from, { replace: true });
             }

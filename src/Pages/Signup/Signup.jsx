@@ -30,13 +30,13 @@ export default function Signup() {
     const [togglePassword, setTogglePassword] = useState({ password: false, confirmPassword: false });
     const [signupErrState, signupErrorDispatch] = useReducer(signupErrorReducer, initialSignUpError);
     const [signupUserState, signupUserDispatch] = useReducer(SignupUserReducer, initialNewUser);
-    const { authState, signupHandler } = useAuth();
+    const { authState, userSignupHandler } = useAuth();
 
     function signupFormSubmitHandler(e) {
         e.preventDefault();
         signupErrorDispatch({ type: RESET_SIGNUP_ERRORS, payload: initialSignUpError });
         if (!signupFormValidator(signupUserState, signupErrorDispatch)) {
-            signupHandler(signupUserState);
+            userSignupHandler(signupUserState);
             signupUserDispatch({ type: RESET_NEW_USER_DATA, payload: initialNewUser });
         }
     }

@@ -27,7 +27,7 @@ export default function CategoryBar() {
 
     return (
         <>
-            <div className="flex-row-spc-btw">
+            <div className="category-bar-wrapper">
                 <div>
                     {categories?.map((categ) => {
                         return (

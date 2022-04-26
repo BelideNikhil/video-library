@@ -53,7 +53,7 @@ export default function SingleVideo() {
             ) : (
                 <main className="main pt-12 single-video-wrapper">
                     <div className="single-video">
-                        <ReactPlayer playing width="100%" height="30rem" controls={true} url={getVideoUrl(videoId)} />
+                        <ReactPlayer playing width="100%" height="25rem" controls={true} url={getVideoUrl(videoId)} />
 
                         <div className="single-video-title my-8">{video?.title}</div>
                         <div className="view-count">{video?.views} views</div>

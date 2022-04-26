@@ -5,7 +5,8 @@
 }
 .home-page-wrapper::before {
     content: "";
-    background: url(https://www.heromotocorp.com/en-in/xpulse200-4v/images/rally-kit-lg.jpg) 50% / cover no-repeat;
+    background: url(https://raw.githubusercontent.com/BelideNikhil/gifstorage/master/VideoLibrary/hero-bg.jpg) 50% /
+        cover no-repeat;
     position: absolute;
     top: 0;
     left: 0;

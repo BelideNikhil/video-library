@@ -30,6 +30,8 @@ export const videoActionTypes = {
     SET_LOADING: "SET_LOADING",
     SET_ERROR: "SET_ERROR",
     SET_SELECTED_CATEGORY: "SET_SELECTED_CATEGORY",
+    SET_SEARCH_TXT: "SET_SEARCH_TXT",
+    SET_SORT_BY_DATE: "SET_SORT_BY_DATE",
 };
 
 export const playlistsActionTypes = {

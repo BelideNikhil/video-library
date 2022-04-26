@@ -16,10 +16,7 @@ export default function Navbar() {
     return (
         <div className="header-wrapper pa-8 ">
             <header className="header pa-8 flex-row-spc-btw">
-                <button className="btn-icon nav-toggle-btn mr-16">
-                    <i className="fas fa-bars"></i>
-                </button>
-                <Link to="/explore">
+                <Link to="/">
                     <button className="header-logo">
                         Off Road <span className="primary-accent">T</span>
                         <span className="secondary-accent">V</span>

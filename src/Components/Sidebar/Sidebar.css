@@ -10,6 +10,8 @@
 .sidebar {
     width: 100%;
     background-color: var(--clr-background);
+    display: flex;
+    flex-direction: column;
 }
 
 .sidebar-btn {
@@ -28,4 +30,44 @@
 .sidebar-btn:active {
     transform: scale(0.99);
     transition: 0.1s ease;
+}
+
+@media screen and (max-width: 950px) {
+    .sidebar-wrapper {
+        height: max-content;
+        z-index: 15;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        top: unset;
+        width: 100%;
+        box-shadow: var(--box-shadow-heavy);
+        padding: 0;
+    }
+    .App.dark .sidebar-wrapper {
+        box-shadow: 0 -2px 10px rgba(0, 0, 0, 1);
+    }
+    .sidebar {
+        flex-direction: row;
+    }
+    .sidebar-btn.home-btn {
+        display: none;
+    }
+    .sidebar-btn {
+        flex-grow: 1;
+        display: flex;
+        font-size: 0.9rem;
+        flex-direction: column;
+        margin: unset;
+    }
+    .sidebar-btn span {
+        margin-bottom: 3px;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .sidebar-btn {
+        font-size: 0.7rem;
+        padding: 0.5rem 0;
+    }
 }

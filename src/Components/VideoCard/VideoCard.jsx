@@ -2,13 +2,14 @@ import "./VideoCard.css";
 import { getThumbnail, getCreatorImg, viewCountFormatter } from "../../Utils";
 import { ThreeDotMenu } from "../index";
 import { useState, useRef, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 export default function VideoCard({ video }) {
     const [showMenu, setShowMenu] = useState(false);
     const { _id, title, creator, creatorId, uploadDate, views } = video;
     const videoCardRef = useRef(null);
     const navigate = useNavigate();
+    const { pathname } = useLocation();
 
     useEffect(() => {
         const checkIfClickedOutside = (e) => {
@@ -34,11 +35,13 @@ export default function VideoCard({ video }) {
                     <div className=" mr-8">
                         <div className="video-card-title mb-4">{title}</div>
                         <div className="creator-tag">{creator}</div>
-                        <div>
-                            <span className="upload-date">{uploadDate}</span>
-                            <span className="dot"></span>
-                            <span className="video-count">{viewCountFormatter(views)}</span>
-                        </div>
+                        {pathname === "/explore" ? (
+                            <div>
+                                <span className="upload-date">{uploadDate}</span>
+                                <span className="dot"></span>
+                                <span className="video-count">{viewCountFormatter(views)} views</span>
+                            </div>
+                        ) : null}
                     </div>
                 </div>
                 <div style={{ position: "relative" }}>

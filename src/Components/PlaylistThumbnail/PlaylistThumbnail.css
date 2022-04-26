@@ -28,3 +28,9 @@
     color: var(--clr-accent-two);
     margin: 0;
 }
+
+@media screen and (max-width: 600px) {
+    .playlist-thumbnail {
+        justify-self: center;
+    }
+}

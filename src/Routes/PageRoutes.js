@@ -12,6 +12,7 @@ import {
     WatchLater,
     LikedVideos,
     Profile,
+    Homepage,
 } from "../Pages";
 import { useAuth } from "../Hooks";
 
@@ -24,7 +25,7 @@ export default function PageRoutes() {
         <div className="route-wrapper">
             <ResetScrollbar>
                 <Routes>
-                    <Route path="/" element={<VideoListing />} />
+                    <Route path="/" element={<Homepage />} />
                     <Route path="/explore" element={<VideoListing />} />
                     <Route path="/explore/:videoId" element={<SingleVideo />} />
 

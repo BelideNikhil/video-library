@@ -1,7 +1,3 @@
-.video-card {
-    max-width: 20rem;
-}
-
 .video-card .video-content-wrapper {
     display: flex;
     justify-content: space-between;

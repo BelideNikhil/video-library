@@ -44,3 +44,20 @@
 .menu-btn:hover {
     color: var(--clr-accent-two);
 }
+
+/*  */
+.category-bar-wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+@media screen and (max-width: 550px) {
+    .category-bar-wrapper {
+        flex-direction: column;
+    }
+    .category-bar-wrapper > *:nth-child(2) {
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+    }
+}

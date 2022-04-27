@@ -16,3 +16,9 @@
     flex: 1;
     border: none;
 }
+
+@media screen and (max-width: 600px) {
+    .new-playlist-wrapper {
+        justify-self: center;
+    }
+}

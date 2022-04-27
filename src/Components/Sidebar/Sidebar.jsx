@@ -3,10 +3,10 @@ import { NavLink } from "react-router-dom";
 export default function Sidebar() {
     return (
         <aside className="sidebar-wrapper">
-            <div className="sidebar flex-clmn-start-start">
+            <div className="sidebar">
                 <NavLink
                     to="/"
-                    className={`sidebar-btn ${({ isActive }) =>
+                    className={`sidebar-btn home-btn ${({ isActive }) =>
                         isActive ? "active" : ""} flex-row-start-center px-1 py-12 mb-6`}
                 >
                     <span className="material-icons-outlined mx-16">home</span>Home

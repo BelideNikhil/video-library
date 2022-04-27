@@ -35,7 +35,7 @@
 @media screen and (max-width: 950px) {
     .sidebar-wrapper {
         height: max-content;
-        z-index: 15;
+        z-index: var(--z-index-11);
         position: fixed;
         bottom: 0;
         left: 0;

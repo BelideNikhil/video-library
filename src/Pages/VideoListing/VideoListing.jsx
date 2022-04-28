@@ -56,7 +56,7 @@ export default function VideoListing() {
                                         <VideoCard video={video} />
                                     </div>
                                 ) : (
-                                    <VideoCard key={index} video={video} />
+                                    <VideoCard key={video._id} video={video} />
                                 );
                             })}
                         </div>

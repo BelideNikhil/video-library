@@ -32,6 +32,8 @@ export const videoActionTypes = {
     SET_SELECTED_CATEGORY: "SET_SELECTED_CATEGORY",
     SET_SEARCH_TXT: "SET_SEARCH_TXT",
     SET_SORT_BY_DATE: "SET_SORT_BY_DATE",
+    SET_PAGE_NUMBER: "SET_PAGE_NUMBER",
+    SET_TOTAL_PAGES: "SET_TOTAL_PAGES",
 };
 
 export const playlistsActionTypes = {

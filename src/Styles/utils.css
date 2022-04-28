@@ -219,6 +219,14 @@
     height: 2rem;
     width: 100%;
 }
+.spacer-three {
+    height: 3rem;
+    width: 100%;
+}
+.spacer-four {
+    height: 4rem;
+    width: 100%;
+}
 .pointer {
     cursor: pointer;
 }

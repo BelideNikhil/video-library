@@ -2,6 +2,7 @@ import { getLoginDetails } from "./AuthServices/getLoginService";
 import { getSignupDetails } from "./AuthServices/getSignupService";
 
 import { getVideoList } from "./VideoServices/getVideoListService";
+import { getPagedVideosService } from "./VideoServices/getPagedVideosService";
 
 import { addToPlaylistService } from "./PlaylistServices/addToPlaylistService";
 import { createPlaylistService } from "./PlaylistServices/createPlaylistService";
@@ -51,4 +52,5 @@ export {
     getLikesService,
     addToLikedVideoService,
     removeFromLikedService,
+    getPagedVideosService,
 };

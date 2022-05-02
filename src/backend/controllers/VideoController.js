@@ -11,17 +11,39 @@ import { Response } from "miragejs";
  * */
 
 export const getAllVideosHandler = function () {
-  try {
-    return new Response(200, {}, { videos: this.db.videos });
-  } catch (error) {
-    return new Response(
-      500,
-      {},
-      {
-        error,
-      }
-    );
-  }
+    try {
+        return new Response(200, {}, { videos: this.db.videos });
+    } catch (error) {
+        return new Response(
+            500,
+            {},
+            {
+                error,
+            }
+        );
+    }
+};
+
+/**
+ * This handler handles gets videos based on page number in the db.
+ * send GET Request at /api/videos/page/page-number
+ * */
+
+export const getPagedVideosHandler = function (schema, request) {
+    const pageNum = Number(request.params.pageNum);
+    const videos = this.db.videos.slice(pageNum * 8, pageNum * 8 + 8);
+
+    try {
+        return new Response(200, {}, { videos });
+    } catch (error) {
+        return new Response(
+            500,
+            {},
+            {
+                error,
+            }
+        );
+    }
 };
 
 /**
@@ -37,17 +59,17 @@ export const getAllVideosHandler = function () {
  * */
 
 export const getVideoHandler = function (schema, request) {
-  const { videoId } = request.params;
-  try {
-    const video = schema.videos.findBy({ _id: videoId }).attrs;
-    return new Response(200, {}, { video });
-  } catch (error) {
-    return new Response(
-      500,
-      {},
-      {
-        error,
-      }
-    );
-  }
+    const { videoId } = request.params;
+    try {
+        const video = schema.videos.findBy({ _id: videoId }).attrs;
+        return new Response(200, {}, { video });
+    } catch (error) {
+        return new Response(
+            500,
+            {},
+            {
+                error,
+            }
+        );
+    }
 };
